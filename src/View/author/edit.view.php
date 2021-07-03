@@ -1,6 +1,6 @@
 <section class="hero-banner d-flex align-items-center">
   <div class="container text-center">
-    <h2>modifier un employé</h2>
+    <h2>Modifier un auteuré</h2>
   </div>
 </section>
 <section class="contact-section area-padding">

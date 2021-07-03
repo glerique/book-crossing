@@ -6,7 +6,7 @@ class Box
 {
 
     private $id;
-    private $name;
+    private $boxName;
 
 
 
@@ -19,9 +19,9 @@ class Box
         return $this->id;
     }
 
-    public function getName()
+    public function getBoxName()
     {
-        return $this->name;
+        return $this->boxName;
     }
 
 
@@ -35,9 +35,9 @@ class Box
         return $id;
     }
 
-    public function setName($name)
+    public function setBoxName($boxName)
     {
-        $this->name = $name;
-        return $name;
+        $this->boxName = $boxName;
+        return $boxName;
     }
 }

@@ -27,14 +27,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Livres</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Boites</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/book-Crossing/authors" role="button" aria-haspopup="true" aria-expanded="false">Auteurs</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/book-crossing/authors">Liste</a>
                             <a class="dropdown-item" href="/book-crossing/author/new">Ajouter</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/book-Crossing/boxes" role="button" aria-haspopup="true" aria-expanded="false">Boites</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/book-crossing/boxes">Liste</a>
+                            <a class="dropdown-item" href="/book-crossing/box/new">Ajouter</a>
                         </div>
                     </li>
                 </ul>
