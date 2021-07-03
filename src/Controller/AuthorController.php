@@ -24,7 +24,7 @@ class AuthorController extends Controller
 
     public function index($id = 1)
     {
-
+        $id = (int)$id;
         if (!is_int($id)) {
             $this->redirect(
                 "/book-crossing/authors"
