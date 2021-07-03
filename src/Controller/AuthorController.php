@@ -73,7 +73,7 @@ class AuthorController extends Controller
 
     public function newView()
     {
-        Renderer::render("author/nouveau");
+        Renderer::render("author/new");
     }
 
     public function new()
@@ -118,7 +118,7 @@ class AuthorController extends Controller
                 "Vous essayé de modifier un auteur qui n'existe pas !"
             );
         }
-        Renderer::Render("author/modifier", compact('author'));
+        Renderer::Render("author/edit", compact('author'));
     }
 
     public function update()
@@ -159,14 +159,14 @@ class AuthorController extends Controller
             );
         }
         $manager = $this->model;
-        $departement = $manager->findById($id);
-        if (!$departement) {
+        $author = $manager->findById($id);
+        if (!$author) {
             $this->redirectWithError(
                 "/book-crossing/authors",
                 "Vous essayé de supprimer un autheur qui n'existe pas !"
             );
         }
-        $manager->deleteById($departement);
+        $manager->deleteById($author);
 
         $this->redirectWithSuccess(
             "/book-crossing/authors",
