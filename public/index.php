@@ -6,32 +6,26 @@ use App\Exceptions\NotFoundException;
 
 require '../vendor/autoload.php';
 
+session_start();
+
 //define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR);
 //define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
-
 $router = new Router($_GET['url']);
 
-$router->get('/', 'App\Controllers\BookController@index');
-$router->get('/books', 'App\Controllers\BookController@index');
-$router->get('/books/:id', 'App\Controllers\BookController@show');
-/*
-$router->get('/', 'App\Controllers\BlogController@welcome');
-$router->get('/posts', 'App\Controllers\BlogController@index');
-$router->get('/posts/:id', 'App\Controllers\BlogController@show');
-$router->get('/tags/:id', 'App\Controllers\BlogController@tag');
+$router->get('/', 'App\Controller\BookController@index');
+$router->get('/books', 'App\Controller\BookController@index');
+$router->get('/book/:id', 'App\Controller\BookController@show');
+$router->get('/authors', 'App\Controller\AuthorController@index');
+$router->get('/authors/:id', 'App\Controller\AuthorController@index');
+$router->post('/author/create', 'App\Controller\AuthorController@new');
+$router->get('/author/new', 'App\Controller\AuthorController@newView');
+$router->get('/author', 'App\Controller\AuthorController@show');
+$router->get('/author/:id', 'App\Controller\AuthorController@show');
+$router->get('/author/edit/:id', 'App\Controller\AuthorController@editView');
+$router->post('/author/update', 'App\Controller\AuthorController@update');
+$router->get('/author/delete/:id', 'App\Controller\AuthorController@delete');
 
-$router->get('/login', 'App\Controllers\UserController@login');
-$router->post('/login', 'App\Controllers\UserController@loginPost');
-$router->get('/logout', 'App\Controllers\UserController@logout');
-
-$router->get('/admin/posts', 'App\Controllers\Admin\PostController@index');
-$router->get('/admin/posts/create', 'App\Controllers\Admin\PostController@create');
-$router->post('/admin/posts/create', 'App\Controllers\Admin\PostController@createPost');
-$router->post('/admin/posts/delete/:id', 'App\Controllers\Admin\PostController@destroy');
-$router->get('/admin/posts/edit/:id', 'App\Controllers\Admin\PostController@edit');
-$router->post('/admin/posts/edit/:id', 'App\Controllers\Admin\PostController@update');
-*/
 try {
     $router->run();
 } catch (NotFoundException $e) {

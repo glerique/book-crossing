@@ -9,9 +9,9 @@ class Renderer
         extract($var);
 
         ob_start();
-        require('src/View/' . $path . '.view.php');
+        require('../src/View/' . $path . '.view.php');
         $pageContent = ob_get_clean();
 
-        require('src/layout.php');
+        require('../src/View/layout.php');
     }
 }
