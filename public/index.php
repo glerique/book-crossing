@@ -25,7 +25,12 @@ $router->get('/author/:id', 'App\Controller\AuthorController@show');
 $router->get('/author/edit/:id', 'App\Controller\AuthorController@editView');
 $router->post('/author/update', 'App\Controller\AuthorController@update');
 $router->get('/author/delete/:id', 'App\Controller\AuthorController@delete');
-
+$router->get('/boxes', 'App\Controller\BoxController@index');
+$router->post('/box/create', 'App\Controller\BoxController@new');
+$router->get('/box/new', 'App\Controller\BoxController@newView');
+$router->get('/box/edit/:id', 'App\Controller\BoxController@editView');
+$router->post('/box/update', 'App\Controller\BoxController@update');
+$router->get('/box/delete/:id', 'App\Controller\BoxController@delete');
 try {
     $router->run();
 } catch (NotFoundException $e) {
