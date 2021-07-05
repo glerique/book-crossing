@@ -31,6 +31,13 @@ $router->get('/box/new', 'App\Controller\BoxController@newView');
 $router->get('/box/edit/:id', 'App\Controller\BoxController@editView');
 $router->post('/box/update', 'App\Controller\BoxController@update');
 $router->get('/box/delete/:id', 'App\Controller\BoxController@delete');
+$router->get('/categories', 'App\Controller\CategoryController@index');
+$router->post('/category/create', 'App\Controller\CategoryController@new');
+$router->get('/category/new', 'App\Controller\CategoryController@newView');
+$router->get('/category/edit/:id', 'App\Controller\CategoryController@editView');
+$router->post('/category/update', 'App\Controller\CategoryController@update');
+$router->get('/category/delete/:id', 'App\Controller\CategoryController@delete');
+
 try {
     $router->run();
 } catch (NotFoundException $e) {

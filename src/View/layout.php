@@ -35,6 +35,13 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/book-Crossing/boxes" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/book-crossing/categories">Liste</a>
+                            <a class="dropdown-item" href="/book-crossing/category/new">Ajouter</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/book-Crossing/boxes" role="button" aria-haspopup="true" aria-expanded="false">Boites</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/book-crossing/boxes">Liste</a>

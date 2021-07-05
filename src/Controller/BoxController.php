@@ -31,7 +31,7 @@ class BoxController extends Controller
 
     public function newView()
     {
-        Renderer::render("author/new");
+        Renderer::render("box/new");
     }
 
     public function new()
