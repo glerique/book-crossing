@@ -7,7 +7,7 @@ class Category
 {
 
     private $id;
-    private $name;
+    private $categoryName;
 
 
 
@@ -17,12 +17,12 @@ class Category
 
     public function getId()
     {
-        $this->id;
+        return $this->id;
     }
 
-    public function getName()
+    public function getCategoryName()
     {
-        $this->name;
+        return $this->categoryName;
     }
 
     /**
@@ -36,9 +36,9 @@ class Category
     }
 
 
-    public function setName($name)
+    public function setCategoryName($categoryName)
     {
-        $this->name = $name;
-        return $name;
+        $this->categoryName = $categoryName;
+        return $categoryName;
     }
 }
