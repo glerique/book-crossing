@@ -24,8 +24,12 @@
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Livres</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/book-Crossing/books" role="button" aria-haspopup="true" aria-expanded="false">Livres</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/book-crossing/books">Liste</a>
+                            <a class="dropdown-item" href="/book-crossing/book/new">Ajouter</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/book-Crossing/authors" role="button" aria-haspopup="true" aria-expanded="false">Auteurs</a>
