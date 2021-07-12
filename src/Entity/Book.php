@@ -7,14 +7,17 @@ class book
 
     private $id;
     private $title;
-    private $format;
     private $pages;
     private $authorId;
     private $categoryId;
     private $boxId;
     private $archived;
 
-
+    public function __construct()
+    {
+        $this->boxId = 1;
+        $this->archived = 0;
+    }
 
     /**
      * Getters
@@ -30,11 +33,6 @@ class book
         return $this->title;
     }
 
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
     public function getPages()
     {
         return $this->pages;
@@ -45,9 +43,19 @@ class book
         return $this->authorId;
     }
 
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
     public function getCategoryId()
     {
         return $this->categoryId;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
     }
 
     public function getBoxId()
@@ -76,11 +84,6 @@ class book
         return $title;
     }
 
-    public function setFormat($format)
-    {
-        $this->format = $format;
-        return $format;
-    }
 
     public function setPages($pages)
     {
@@ -95,11 +98,23 @@ class book
         return $authorId;
     }
 
-
-    public function setCategoryId($CategoryId)
+    public function setAuthor($author)
     {
-        $this->CategoryId = $CategoryId;
-        return $CategoryId;
+        $this->author = $author;
+        return $author;
+    }
+
+
+    public function setCategoryId($categoryId)
+    {
+        $this->categoryId = $categoryId;
+        return $categoryId;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $category;
     }
 
 
