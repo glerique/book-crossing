@@ -55,4 +55,9 @@ class Author
         $this->firstName = $firstName;
         return $firstName;
     }
+
+    public function __toString()
+    {
+        return $this->lastName;
+    }
 }
