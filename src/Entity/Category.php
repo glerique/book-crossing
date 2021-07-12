@@ -41,4 +41,9 @@ class Category
         $this->categoryName = $categoryName;
         return $categoryName;
     }
+
+    public function __toString()
+    {
+        return $this->categoryName;
+    }
 }
