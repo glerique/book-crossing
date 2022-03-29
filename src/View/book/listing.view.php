@@ -17,7 +17,7 @@
                 <tbody>
                     <?php
 
-                    foreach ($books as $book) {
+                    foreach ($results as $book) {
                         echo '<tr>
                             <td><a href="/book-crossing/book/' . $book->getId() . '"> ' . $book->getId() . '</a></td>                            
                             <td>' . $book->getTitle() . '</td>

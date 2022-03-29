@@ -14,7 +14,7 @@
                 <tbody>
                     <?php
 
-                    foreach ($boxes as $box) {
+                    foreach ($results as $box) {
                         echo '<tr>
                             <td><a href="/book-crossing/box/' . $box->getId() . '"> ' . $box->getId() . '</a></td>                            
                             <td>' . $box->getBoxName() . '</td>                                                        

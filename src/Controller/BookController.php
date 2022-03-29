@@ -6,7 +6,6 @@ use App\Entity\Book;
 use App\Lib\Renderer;
 use App\Lib\Pagination;
 use App\Model\BoxManager;
-use App\Model\BookManager;
 use App\Model\AuthorManager;
 use App\Controller\Controller;
 use App\Model\CategoryManager;
@@ -15,63 +14,9 @@ use App\Model\CategoryManager;
 
 class BookController extends Controller
 {
-
-    private $model;
-
-
-
-    public function __construct()
-    {
-        $this->model = new BookManager();
-    }
-
-    public function index($id = 1)
-    {
-        $id = (int)$id;
-        if (!is_int($id)) {
-            $this->redirect(
-                "/book-crossing/books"
-            );
-        }
-
-        $total = $this->model->count();
-        $pagination = new Pagination($total, $id);
-        $pages = $pagination->getPages();
-        $currentPage = $pagination->getCurrentPage();
-        $perPage = $pagination->getPerPage();
-        $books = $this->model->PaginateFindAll($id, $perPage);
-        if (!$books) {
-            $this->redirectWithError(
-                "/book-crossing/books/1",
-                "Vous essayez de consulter une page qui n'existe pas !"
-            );
-        }
-
-        Renderer::render("book/listing", compact('books', 'currentPage', 'pages'));
-    }
-
-
-
-    public function show($id)
-    {
-        $id = (int)$id;
-        if (!$id or !is_int($id)) {
-            $this->redirectWithError(
-                "/book-crossing/authors",
-                "Merci de renseigner un id"
-            );
-        }
-        $book = $this->model->findById($id);
-        if (!$book) {
-            $this->redirectWithError(
-                "/book-crossing/authors",
-                "Vous essayé de consulter un livre qui n'existe pas !"
-            );
-        }
-        Renderer::render("book/details", compact('book'));
-    }
-
-
+    protected $entity = "book";
+    protected $path = "books";
+    protected $modelName = "BookManager";
 
     public function newView()
     {
@@ -170,31 +115,6 @@ class BookController extends Controller
         $this->redirectWithSuccess(
             "/book-crossing/books",
             "Livre modifié avec succès"
-        );
-    }
-
-    public function delete($id)
-    {
-        $id = (int)$id;
-        if (!$id or !is_int($id)) {
-            $this->redirectWithError(
-                "/book-crossing/books",
-                "Merci de renseigner un id"
-            );
-        }
-        $manager = $this->model;
-        $author = $manager->findById($id);
-        if (!$author) {
-            $this->redirectWithError(
-                "/book-crossing/books",
-                "Vous essayé de supprimer un autheur qui n'existe pas !"
-            );
-        }
-        $manager->deleteById($author);
-
-        $this->redirectWithSuccess(
-            "/book-crossing/books",
-            "Auteur supprimé avec succès"
         );
     }
 }

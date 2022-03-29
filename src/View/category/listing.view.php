@@ -13,7 +13,7 @@
 
                 <tbody>
                     <?php
-                    foreach ($categories as $category) {
+                    foreach ($results as $category) {
                         echo '<tr>
                             <td><a href="/book-crossing/category/' . $category->getId() . '"> ' . $category->getId() . '</a></td>                            
                             <td>' . $category->getCategoryName() . '</td>                                                        

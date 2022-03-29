@@ -11,12 +11,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <input class="form-control" type="hidden" name="id" value="<?= $box->getId(); ?>">
+                                <input class="form-control" type="hidden" name="id" value="<?= $result->getId(); ?>">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                Nom : <input class="form-control" type="text" name="boxName" value="<?= $box->getBoxName(); ?>">
+                                Nom : <input class="form-control" type="text" name="boxName" value="<?= $result->getBoxName(); ?>">
                             </div>
                         </div>
                     </div>

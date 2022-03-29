@@ -15,7 +15,7 @@
                 <tbody>
                     <?php
 
-                    foreach ($authors as $author) {
+                    foreach ($results as $author) {
                         echo '<tr>
                             <td><a href="/book-crossing/author/' . $author->getId() . '"> ' . $author->getId() . '</a></td>                            
                             <td>' . $author->getLastName() . '</td>
