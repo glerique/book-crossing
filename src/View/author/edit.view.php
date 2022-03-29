@@ -11,16 +11,16 @@
           <div class="row">
             <div class="col-12">
               <div class="form-group">
-                <input class="form-control" type="hidden" name="id" value="<?= $author->getId(); ?>">
+                <input class="form-control" type="hidden" name="id" value="<?= $result->getId(); ?>">
               </div>
             </div>
             <div class="col-12">
               <div class="form-group">
-                Nom : <input class="form-control" type="text" name="lastName" value="<?= $author->getLastName(); ?>">
+                Nom : <input class="form-control" type="text" name="lastName" value="<?= $result->getLastName(); ?>">
               </div>
             </div>
             <div class="form-group">
-              Prénom : <input class="form-control" type="text" name="firstName" value="<?= $author->getFirstName(); ?>">
+              Prénom : <input class="form-control" type="text" name="firstName" value="<?= $result->getFirstName(); ?>">
             </div>
           </div>
           <div class="form-group mt-3">

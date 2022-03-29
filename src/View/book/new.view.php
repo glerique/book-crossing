@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="service">Autheur : </label>
+                        <label for="service">Auteur : </label>
                         <select class="form-control" name="authorId">
                             <?php foreach ($authors as $author) {
                                 echo '<option value =' . $author->getId() . '>' . $author->getLastName() . $author->getFirstName() . '</option>';

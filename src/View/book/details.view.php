@@ -6,11 +6,11 @@
 
         <div class="form-group mt-2">
             <label for="lastName" class="form-label">Tritre : </label>
-            <input type="text" class="form-control" name="title" value="<?= $book->getTitle(); ?>" readonly>
+            <input type="text" class="form-control" name="title" value="<?= $result->getTitle(); ?>" readonly>
         </div>
         <div class="form-group mt-2">
             <label for="lastName" class="form-label">Pages : </label>
-            <input type="text" class="form-control" name="pages" value="<?= $book->getPages(); ?>" readonly>
+            <input type="text" class="form-control" name="pages" value="<?= $result->getPages(); ?>" readonly>
         </div>
         <div class="form-group mt-2"><input type="button" class="btn btn-info" value="Retour" onClick="document.location.href = document.referrer" />
         </div>

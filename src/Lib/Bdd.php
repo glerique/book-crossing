@@ -10,19 +10,20 @@ class Bdd
 
     public static function dbConnect()
     {
-        $params = [
-            'host' => 'localhost',
-            'dbname' => 'bookCrossing',
-            'username' => 'admin',
-            'password' => 'test'
-        ];
 
-        if (self::$db === null) {
+        $host = 'localhost';
+        $dbname = 'bookCrossing';
+        $username = 'root';
+        $password = '';
 
-            $dsn = "mysql:host={$params['host']}; dbname={$params['dbname']}";
 
-            $db = new PDO($dsn, $params['username'], $params['password']);
+        if (empty(self::$db)) {
+
+            $dsn = "mysql:host=$host; dbname=$dbname";
+
+            $db = new PDO($dsn, $username, $password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $db->exec("SET NAMES 'utf8';");
         }
         return $db;
     }

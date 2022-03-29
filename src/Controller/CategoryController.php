@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Lib\Renderer;
 use App\Entity\Category;
-use App\Model\CategoryManager;
 use App\Controller\Controller;
 
 
@@ -12,27 +11,10 @@ use App\Controller\Controller;
 class CategoryController extends Controller
 {
 
-    private $model;
+    protected $entity = "category";
+    protected $modelName = "CategoryManager";
+    protected $results = "categories";
 
-
-
-    public function __construct()
-    {
-        $this->model = new CategoryManager();
-    }
-
-    public function index()
-    {
-        $categories = $this->model->findAll();
-
-        Renderer::render("category/listing", compact('categories'));
-    }
-
-
-    public function newView()
-    {
-        Renderer::render("category/new");
-    }
 
     public function new()
     {
@@ -53,27 +35,6 @@ class CategoryController extends Controller
             "/book-crossing/categories",
             "Categorie ajouté avec succès"
         );
-    }
-
-
-    public function editView($id)
-    {
-        $id = (int)$id;
-        if (!$id or !is_int($id)) {
-            $this->redirectWithError(
-                "/book-crossing/categories",
-                "Merci de renseigner un id"
-            );
-        }
-        $manager = $this->model;
-        $category = $manager->findById($id);
-        if (!$category) {
-            $this->redirectWithError(
-                "/book-crossing/categories",
-                "Vous essayé de modifier une categorie qui n'existe pas !"
-            );
-        }
-        Renderer::Render("category/edit", compact('category'));
     }
 
     public function update()
@@ -100,31 +61,6 @@ class CategoryController extends Controller
         $this->redirectWithSuccess(
             "/book-crossing/categories",
             "Categorie modifiée avec succès"
-        );
-    }
-
-    public function delete($id)
-    {
-        $id = (int)$id;
-        if (!$id or !is_int($id)) {
-            $this->redirectWithError(
-                "/book-crossing/categories",
-                "Merci de renseigner un id"
-            );
-        }
-        $manager = $this->model;
-        $category = $manager->findById($id);
-        if (!$category) {
-            $this->redirectWithError(
-                "/book-crossing/categories",
-                "Vous essayé de supprimer une categorie qui n'existe pas !"
-            );
-        }
-        $manager->deleteById($category);
-
-        $this->redirectWithSuccess(
-            "/book-crossing/categories",
-            "Auteur supprimé avec succès"
         );
     }
 }

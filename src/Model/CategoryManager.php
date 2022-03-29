@@ -14,14 +14,6 @@ class CategoryManager extends Model
     protected $class  = 'App\Entity\Category';
     protected $objet = 'new Category()';
 
-    public function findAll()
-    {
-        $req = $this->db->prepare("SELECT * FROM category");
-        $req->execute();
-        $req->setFetchMode(PDO::FETCH_CLASS, 'App\Entity\Category');
-        $categories = $req->fetchAll();
-        return $categories;
-    }
 
 
     public function add(Category $category)
