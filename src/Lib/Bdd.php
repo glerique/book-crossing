@@ -13,8 +13,8 @@ class Bdd
 
         $host = 'localhost';
         $dbname = 'bookCrossing';
-        $username = 'root';
-        $password = '';
+        $username = 'admin';
+        $password = 'test';
 
 
         if (empty(self::$db)) {
