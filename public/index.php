@@ -16,7 +16,7 @@ $router = new Router($_GET['url']);
 $router->get('/', 'App\Controller\BookController@paginate');
 
 $router->get('/books', 'App\Controller\BookController@paginate');
-$router->get('/books/:id', 'App\Controller\BookController@show');
+$router->get('/books/:id', 'App\Controller\BookController@paginate');
 $router->post('/book/create', 'App\Controller\BookController@new');
 $router->get('/book/new', 'App\Controller\BookController@newView');
 $router->get('/book/:id', 'App\Controller\BookController@show');
@@ -25,7 +25,7 @@ $router->post('/book/update', 'App\Controller\BookController@update');
 $router->get('/book/delete/:id', 'App\Controller\BookController@delete');
 
 $router->get('/authors', 'App\Controller\AuthorController@paginate');
-$router->get('/authors/:id', 'App\Controller\AuthorController@index');
+$router->get('/authors/:id', 'App\Controller\AuthorController@paginate');
 $router->post('/author/create', 'App\Controller\AuthorController@new');
 $router->get('/author/new', 'App\Controller\AuthorController@newView');
 $router->get('/author/:id', 'App\Controller\AuthorController@show');
